@@ -1,0 +1,11 @@
+{
+  "name": "pos_v2",
+  "version": "1.0.0",
+  "private": true,
+  "author" : "Vermouth",
+  "main" : "./main/main.js",
+  "scripts": {
+    "start": "node ./main/main.js"
+  },
+  "dependencies" : {}
+}
