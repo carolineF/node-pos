@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "author" : "Vermouth",
-  "main" : "./main/main.js",
+  "main" : "./main/main-test.js",
   "scripts": {
-    "start": "node ./main/main.js"
+    "start": "jasmine-node main/mainspec.js"
   },
   "dependencies" : {}
 }
