@@ -8,7 +8,7 @@ function Receipt() {
 Receipt.prototype.createReceipt = function(cart, discounts) {
 
   var receipt = '***<没钱赚商店>收据***\n' +
-  '打印时间：'+ Utils.getTime() +
+  '打印时间：'+ Utils.getTime('YYYY年MM月DD日 HH:mm:ss') +
   '\n----------------------\n' +
    this.getItemString(cart.cartItems, discounts) +
   '----------------------\n挥泪赠送商品：\n' +
