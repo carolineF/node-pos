@@ -1,13 +1,12 @@
 {
-  "name": "pos_v2",
+  "name": "pos-v2",
   "version": "1.0.0",
-  "private": true,
-  "author" : "Vermouth",
-  "main" : "./main/main-test.js",
   "scripts": {
-    "start": "jasmine-node main/mainspec.js"
+    "test": "jasmine spec/mainspec.js",
+    "start": "node ./main/main.js"
   },
-  "dependencies" : {
+  "devDependencies": {
+    "jasmine": "^2.3.4",
     "moment": "^2.10.3"
   }
 }

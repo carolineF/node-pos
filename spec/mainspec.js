@@ -1,5 +1,5 @@
-var main = require('./main');
-var fixtures = require('./model/fixtures');
+var printReceipt = require('../main/print-receipt.js');
+var fixtures = require('../main/model/fixtures');
 
 describe('pos_v2', function() {
   var allItems, inputs, dateDigitToString;
@@ -26,7 +26,7 @@ describe('pos_v2', function() {
 
     spyOn(console, 'log');
 
-    main.printReceipt(inputs);
+    printReceipt(inputs);
 
     var currentDate = new Date(),
       year = dateDigitToString(currentDate.getFullYear()),
