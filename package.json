@@ -2,11 +2,13 @@
   "name": "pos-v2",
   "version": "1.0.0",
   "scripts": {
-    "test": "jasmine spec/mainspec.js",
+    "test": "jasmine",
     "start": "node ./main/main.js"
   },
-  "devDependencies": {
-    "jasmine": "^2.3.4",
+  "dependencies": {
     "moment": "^2.10.3"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.0"
   }
 }
