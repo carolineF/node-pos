@@ -10,9 +10,9 @@ PromotionCalculater.prototype.addDiscount = function(spread, cartItem) {
   this.discounts.push(discount);
 };
 
-PromotionCalculater.prototype.choosePromotion = function(promotionType, cartItems) {
+PromotionCalculater.prototype.getDiscounts = function(cartItems) {
 
-  var barcodes = Promotion.getPromotionBarcodesWithType(promotionType);
+  var barcodes = Promotion.getPromotionBarcodesWithType('BUY_TWO_GET_ONE_FREE');
 
   this.processPromotion(barcodes, cartItems);
 

@@ -1,6 +1,7 @@
 var Scanner = require('./scanner');
 var Cart = require('./cart');
 var Receipt = require('./receipt');
+var PromotionCalculater = require('./promotion-calculater');
 
 function Pos(scanner, cart) {
   this.scanner = scanner || new Scanner();
@@ -13,7 +14,8 @@ Pos.prototype.scan = function(tag) {
 };
 
 Pos.prototype.processDiscount = function() {
-  return this.cart.processPromotion();
+  var promotionCalculater = new PromotionCalculater();
+  return this.cart.processPromotion(promotionCalculater);
 };
 
 Pos.prototype.createReceipt = function(discounts) {

@@ -1,12 +1,10 @@
-var PromotionCalculater = require('./promotion-calculater');
-
 function Cart(cartItems) {
   this.cartItems = cartItems || [];
 }
 
 Cart.prototype.addCartItem = function(addedCartItem) {
 
-  var cartItem = this.findCartItem(addedCartItem);
+  var cartItem = this.findCartItem(addedCartItem.item.barcode);
   if(cartItem){
     cartItem.count += addedCartItem.count;
   }else{
@@ -14,20 +12,17 @@ Cart.prototype.addCartItem = function(addedCartItem) {
   }
 };
 
-Cart.prototype.findCartItem = function(cartItem) {
+Cart.prototype.findCartItem = function(barcode) {
   for(var i = 0; i < this.cartItems.length; i++) {
-    var isExist = this.cartItems[i].item.barcode === cartItem.item.barcode;
+    var isExist = this.cartItems[i].item.barcode === barcode;
     if(isExist) {
       return this.cartItems[i];
     }
   }
 };
 
-Cart.prototype.processPromotion = function() {
-  var promotionCalculater = new PromotionCalculater();
-  var discounts = promotionCalculater.choosePromotion('BUY_TWO_GET_ONE_FREE', this.cartItems);
-
-  return discounts;
+Cart.prototype.processPromotion = function(promotionCalculater) {
+  return promotionCalculater.getDiscounts(this.cartItems);
 };
 
 Cart.prototype.getAmount = function() {
