@@ -1,4 +1,4 @@
-var item = require('./fixtures.js');
+var item = require('../fixtures.js');
 
 function Item(barcode, name, unit, price) {
   this.barcode = barcode;

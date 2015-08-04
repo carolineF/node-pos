@@ -1,5 +1,5 @@
 exports.loadAllItems  = function() {
-  var Item = require('./item');
+  var Item = require('./model/item');
 
   return [
     new Item('ITEM000000', '可口可乐', '瓶', 3.00),
@@ -12,7 +12,7 @@ exports.loadAllItems  = function() {
 };
 
 exports.loadPromotions = function() {
-  var Promotion = require('./promotion');
+  var Promotion = require('./model/promotion');
 
   return [
     new Promotion('BUY_TWO_GET_ONE_FREE', [

@@ -1,4 +1,4 @@
-var Utils = require('../main/model/utils');
+var Utils = require('../main/utils');
 var moment = require('moment');
 
 describe('Utils', function() {
@@ -10,7 +10,8 @@ describe('Utils', function() {
 
   describe('.getTime()', function() {
     it('should return a current time', function() {
-      expect(Utils.getTime('YYYY年MM月DD日 HH:mm:ss')).toBe(moment().format('YYYY年MM月DD日 HH:mm:ss'));
+      expect(Utils.getTime('YYYY年MM月DD日 HH:mm:ss')).
+        toBe(moment().format('YYYY年MM月DD日 HH:mm:ss'));
     });
   });
 });

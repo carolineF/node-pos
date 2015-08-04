@@ -1,4 +1,4 @@
-var promotion = require('./fixtures');
+var promotion = require('../fixtures');
 
 function Promotion(type, barcodes) {
   this.type = type;

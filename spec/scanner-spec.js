@@ -1,4 +1,3 @@
-
 var Scanner = require('../main/model/scanner');
 var Item = require('../main/model/item');
 var CartItem = require('../main/model/cart-item');

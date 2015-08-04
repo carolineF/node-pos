@@ -1,5 +1,5 @@
 var Item = require('../main/model/item.js');
-var allItem = require('../main/model/fixtures.js');
+var allItem = require('../main/fixtures.js');
 
 describe('Item', function() {
   describe('.find()', function() {

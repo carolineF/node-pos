@@ -1,5 +1,5 @@
 var printReceipt = require('../main/print-receipt.js');
-var fixtures = require('../main/model/fixtures.js');
+var fixtures = require('../main/fixtures.js');
 
 describe('pos_v2', function() {
   var allItems, inputs, dateDigitToString;
