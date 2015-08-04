@@ -9,9 +9,12 @@ describe('Cart', function() {
   var cart;
 
   beforeEach(function() {
-    cartItems = [new CartItem(new Item('ITEM000001', '雪碧', '瓶', 3.00), 5),
-                new CartItem(new Item('ITEM000003', '荔枝', '斤', 15.00), 2),
-                new CartItem(new Item('ITEM000005', '方便面', '袋', 4.50), 3)
+    cartItems = [new CartItem({barcode: 'ITEM000001', name:'雪碧', unit:'瓶',
+                                price:3.00}, 5),
+                new CartItem({barcode: 'ITEM000003', name: '荔枝', unit: '斤',
+                                price: 15.00}, 2),
+                new CartItem({barcode: 'ITEM000005', name: '方便面', unit: '袋',
+                              price: 4.50}, 3)
                 ];
 
     cart = new Cart(cartItems);
@@ -19,14 +22,19 @@ describe('Cart', function() {
 
   describe('#addCartItem()',function() {
     it('add a new cartItem to cartItems', function() {
-      var cartItem = new CartItem(new Item('ITEM000004', '电池', '个', 2.00), 1);
+      var cartItem = new CartItem({barcode: 'ITEM000004',
+                                  name:'电池', unit: '个', price: 2.00}, 1);
       spyOn(cart, 'findCartItem').and.returnValue(undefined);
       cart.addCartItem(cartItem);
       expect(cart.cartItems.length).toBe(4);
     });
 
     it("just add a cartItems's count", function() {
-      var cartItem = new CartItem(new Item('ITEM000001', '雪碧', '瓶', 3.00), 1);
+      var cartItem = new CartItem({barcode: 'ITEM000001',
+                                  name: '雪碧',
+                                  unit: '瓶',
+                                  price: 3.00}, 1);
+
       spyOn(cart, 'findCartItem').and.returnValue(cartItems[0]);
 
       cart.addCartItem(cartItem);

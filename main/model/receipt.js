@@ -42,7 +42,7 @@ Receipt.prototype.getPromotionsString = function(cartItems, discounts) {
   discounts.forEach(function(discount){
     promotionString +=
       '名称：' + discount.item.name +
-      '，数量：' + (discount.spread / discount.item.price) + discount.item.unit + '\n';
+      '，数量：' + (discount.rebate / discount.item.price) + discount.item.unit + '\n';
   });
   return promotionString;
 };

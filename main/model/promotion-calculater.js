@@ -5,8 +5,8 @@ function PromotionCalculater(discounts){
   this.discounts = discounts || [];
 }
 
-PromotionCalculater.prototype.addDiscount = function(spread, cartItem) {
-  var discount = new Discount(spread, cartItem);
+PromotionCalculater.prototype.addDiscount = function(rebate, cartItem) {
+  var discount = new Discount(rebate, cartItem);
   this.discounts.push(discount);
 };
 
